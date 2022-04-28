@@ -1,0 +1,81 @@
+{% extends 'header.html' %}
+{% load static %}
+{% block head %}
+
+
+<div class="content-body">
+    <!-- row -->
+        <div class="row">
+<div class="col-lg-3 col-sm-6">
+<div class="card">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-6">
+                
+            </div>
+           <h2>My Products</h2>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table mb-0">
+                                <thead>
+                                    <tr>
+                                        <th>pic</th>
+                                        <th>Client Name</th>
+                                        <th> Product Name </th>
+                                        <th>Size</th>
+                                        <th>Price</th>
+                                        <th>verify</th>
+                                        <th>Category</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for od in book %}
+                                    <td>
+                                            <div class="round-img">
+                                                <!-- <a href=""><img width="35" src="{{Product.pic}}" alt=""></a> -->
+                                                <img  width="50" alt="Image placeholder"  src="{{od.product.pic.url}}">
+                                            </div>                                        
+                                        </td>
+                                        <td>{{od.client.fname}} {{od.client.lname}}</td>
+                                        <td><span>{{od.product.name}}</span></td>
+                                        <td><span>{{od.product.size}}</span></td>
+                                        <td><span>{{od.product.price}}</span></td>
+                                        <td>
+                                            {% if product.verify %}
+                                            <span class="badge badge-success">
+                                                    <h5>Sussess</h5>
+                                                {% else %}
+                                                <span class="badge badge-unsucces">
+                                                    <h5>Fail</h5>
+                                                {% endif %}
+                                            </span>
+                                        </td>
+                                        <td><span>{{od.product.category}}</span></td>
+                                    </tr>
+                                  {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--**********************************
+    Content body end
+***********************************-->
+
+
+<!--**********************************
+    Footer start
+***********************************-->
+
+<br>
+<br>
+<br>
+
+{% endblock %}  

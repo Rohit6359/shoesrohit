@@ -1,0 +1,63 @@
+        {% extends 'header.html' %}
+        {% load static %}
+        {% block head %}
+        <!--**********************************
+            Sidebar end
+        ***********************************-->
+
+        <!--**********************************
+            Content body start
+        ***********************************-->
+        <div class="content-body">
+            <div class="container-fluid">
+                <div class="row page-titles mx-0">
+                    <div class="col-sm-18 p-md-0">
+                     
+        <div class="card">
+            <div class="card-header">
+                <p>HELLO,{{uid.name}}</p>
+
+                <p>{{msg}}</p></div><br>
+                <h4 class="card-title" style="text-align: center;"><b>Profie page</b></h4>
+                <form role="form" action="{% url 'profile' %}" method="POST">
+                    {% csrf_token %}
+            </div>
+            <div class="card-body">
+                <div class="basic-form">
+                    <form>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label>Name</label>
+                                <input name="name" type="text" class="form-control" value="{{uid.name}}">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label>Email</label>
+                                <input name="email" type="email" class="form-control" value="{{uid.email}}">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label>Address</label>
+                                <input name="address" type="text" class="form-control" value="{{uid.address}}">
+                            </div>
+                            <!-- <div class="form-group col-md-6">
+                                <label>doj</label>
+                                <input name="doj" type="date" class="form-control" value="{{uid.doj}}">
+                            </div> -->
+                            <div class="form-group col-md-6">
+                                <label>pic</label>
+                                <input name="pic" type="file" class="form-control" value="{{uid.pic}}">
+                            </div>
+                        </div>
+                        <div class="text-center mt-4">
+                            <button type="submit" value="'update profile" class="btn btn-primary btn-block">Update Profile</button>
+
+
+
+        <!--**********************************
+            Content body end
+        ***********************************-->
+
+
+        <!--**********************************
+            Footer start
+        ***********************************-->
+        {% endblock %}
